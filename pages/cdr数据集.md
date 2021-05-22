@@ -9,4 +9,4 @@ title: CDR数据集
 ## Amazon: [Amazon](http://jmcauley.ucsd.edu/data/amazon/)
     域：商品（user-level relevance -- type level）
 ## Douban： [Douban](https://github.com/FengZhu-Joey/GA-DTCDR/tree/main/Data)
-    域：
+    域：商品（）
