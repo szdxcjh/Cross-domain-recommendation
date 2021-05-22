@@ -8,4 +8,4 @@ title: CDR数据集
     域：Movie（item-level relevance）
 ## Amazon: [Amazon](http://jmcauley.ucsd.edu/data/amazon/)
     域：商品（user-level relevance -- type level）
-## Douban： /link
+## Douban：
