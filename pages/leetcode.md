@@ -9,6 +9,6 @@ title: Leetcode
 int s = x^y,res = 0;//异或运算，不同为1
 while(s != 0){
     res += s&1;
-    s >> 1;
-              }
+    s >>= 1;
+    }
 ```
