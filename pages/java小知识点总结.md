@@ -11,4 +11,4 @@ title: Java小知识点总结
 ## 初始size为11,扩容：newsize = olesize*2+1
 ## ![2021_05_28_image.png](https://cdn.logseq.com/%2F1e5b0e5f-d368-4a5d-86eb-09a690ee15d762a54c9d-96d8-4d28-a8c3-7bd1fc64bfde2021_05_28_image.png?Expires=4775811653&Signature=B4nVBFXQNR9mlcctC~QL21mOPmuweD5t4NzY2g4ADWOn9YcznZSgUwDUgcqE0zeq2iM3SXIl2ZXOsa89ewuJcejP4rOPHC3NJ07dW8NC-IY4uMBj5-nr7ozgTXJGg6QNgYPyeUcrPuQk6gPjaiV6MfbkM03Ql49f8ub-bXZgpiVdtUjKNZoPLaTAjMT7ujU-4oU3hFaUdDxwh2L7PSNeKaSkJ0fYkO5UavCPQQ7pxiY6ii~gKJFGNpZ~mUAkBC3c7M2jXZYwTES9h559YIWAHd4HoaQOWLNaNOVZZ4quRZrAfrcXhcJZd9rO9LOLK0WW6OgtgQIM93X-PRZNpMfoIQ__&Key-Pair-Id=APKAJE5CCD6X7MP6PTEA)
 ## 3.HashMap(**底层数组+链表实现，可以存储null键和null值，线程不安全**)
-## 扩容就是在put加入元素的个数超过initialCapacity * loadFactor的时候就会将内部Entry数组大小扩大至原来的2倍，触发扩容操作;初始size为16;newsize = oldsize*2;size一定为2的n次幂
+## 扩容就是在put加入元素的个数超过initialCapacity（初始容量） * loadFactor（加载因子）的时候就会将内部Entry数组大小扩大至原来的2倍，触发扩容操作;初始size为16;newsize = oldsize*2;size一定为2的n次幂
