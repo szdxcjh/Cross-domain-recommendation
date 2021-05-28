@@ -11,7 +11,7 @@ title: Java小知识点总结
 ## 初始size为11,扩容：newsize = olesize*2+1
 ## ![2021_05_28_image.png](https://cdn.logseq.com/%2F1e5b0e5f-d368-4a5d-86eb-09a690ee15d762a54c9d-96d8-4d28-a8c3-7bd1fc64bfde2021_05_28_image.png?Expires=4775811653&Signature=B4nVBFXQNR9mlcctC~QL21mOPmuweD5t4NzY2g4ADWOn9YcznZSgUwDUgcqE0zeq2iM3SXIl2ZXOsa89ewuJcejP4rOPHC3NJ07dW8NC-IY4uMBj5-nr7ozgTXJGg6QNgYPyeUcrPuQk6gPjaiV6MfbkM03Ql49f8ub-bXZgpiVdtUjKNZoPLaTAjMT7ujU-4oU3hFaUdDxwh2L7PSNeKaSkJ0fYkO5UavCPQQ7pxiY6ii~gKJFGNpZ~mUAkBC3c7M2jXZYwTES9h559YIWAHd4HoaQOWLNaNOVZZ4quRZrAfrcXhcJZd9rO9LOLK0WW6OgtgQIM93X-PRZNpMfoIQ__&Key-Pair-Id=APKAJE5CCD6X7MP6PTEA)
 ## 3.HashMap(**底层数组+链表实现，可以存储null键和null值，线程不安全**)
-## 扩容就是在put加入元素的个数超过initialCapacity（初始容量） * loadFactor（加载因子）的时候就会将内部Entry数组大小扩大至原来的2倍，触发扩容操作;初始size为16;newsize = oldsize*2;size一定为2的n次幂
+## 扩容就是在put加入元素的个数超过initialCapacity（初始容量） * loadFactor（加载因子，初始默认为0.75）的时候就会将内部Entry数组大小扩大至原来的2倍，触发扩容操作;初始size为16;newsize = oldsize*2;size一定为2的n次幂；
 ## 死循环：扩容时发生链表反转：
     多线程环境下，假设有两个线程A和B都在进行put操作，线程A在执行到transfer函数中挂起，线程A挂起后，此时线程B正常执行，并完成resize操作（头插法）,这会导致环形链表或信息丢失；（1.7），1.8后使用尾插法，如果没有hash碰撞则会直接插入元素。如果线程A和线程B同时进行put操作，刚好这两条不同的数据hash值一样，并且该位置数据为null，线程A进入后还未进行数据插入时挂起，而线程B正常执行，从而正常插入数据，然后线程A获取CPU时间片，此时线程A不用再进行hash判断了，问题出现：线程A会把线程B插入的数据给覆盖，发生线程不安全。
 首先HashMap是线程不安全的，其主要体现：
