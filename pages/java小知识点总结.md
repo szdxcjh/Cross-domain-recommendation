@@ -13,5 +13,5 @@ title: Java小知识点总结
 ## 3.HashMap(**底层数组+链表实现，可以存储null键和null值，线程不安全**)
 ## 扩容就是在put加入元素的个数超过initialCapacity（初始容量） * loadFactor（加载因子）的时候就会将内部Entry数组大小扩大至原来的2倍，触发扩容操作;初始size为16;newsize = oldsize*2;size一定为2的n次幂
 ## 死循环：扩容时发生链表反转：
-    多线程环境下，假设有两个线程A和B都在进行put操作，线程A在执行到transfer函数中挂起，
+    多线程环境下，假设有两个线程A和B都在进行put操作，线程A在执行到transfer函数中挂起，线程A挂起后，此时线程B正常执行，并完成resize操作
 ##
