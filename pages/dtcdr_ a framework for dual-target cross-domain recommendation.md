@@ -7,4 +7,4 @@ title: DTCDR: A Framework for Dual-Target Cross-Domain Recommendation
 ## 主要利用：rating 和 multi-source content information，生成user和item的rating 和 document的[[embeddings]]，接着，基于Multi-Task Learning（MTL），设计了一种embedding分享策略，结合和分享相同user的embeddings；
 ## 传统的CDR方法：
 主要分为两类：content-based transfer and feature-based transfer
-    1.基于内容的转移：利用不同的内容
+    1.基于内容的转移：利用不同的内容（比如评论和用户简介），
