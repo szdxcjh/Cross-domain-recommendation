@@ -8,5 +8,5 @@ title: DTCDR: A Framework for Dual-Target Cross-Domain Recommendation
 ## 传统的CDR方法：
 主要分为两类：content-based transfer and feature-based transfer
     1.基于内容的转移：利用不同的内容（比如评论和用户简介），匹配相似的user和item后构建桥梁，训练CF模型等；
-    2.基于特征的转移：
+    2.基于特征的转移：（）
 ##
